@@ -1,0 +1,42 @@
+﻿
+#nav {
+    background-color: darkblue;
+    padding: 2px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li a {
+    color: #ffffff;
+    font-size: 30px;
+    column-width: 5px;
+}
+
+li {
+    display: inline;
+    padding-left: 2px;
+    column-width: 20px;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 20px
+}
+
+li a:hover {
+    background-color: #808080;
+    color: #2b0707;
+    padding: 1%;
+}
+
+
+#footer {
+    background-color: black;
+    text-align: left;
+    padding: 10px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
