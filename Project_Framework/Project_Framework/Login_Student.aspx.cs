@@ -40,7 +40,7 @@ namespace Project_Framework
                 }
                 else
                 {
-                    Console.Write("Wrong Username or Password");
+                    Response.Write("<script>alert('Wrong Username or Password')</script>");
                 }
                 con.Close();
             }

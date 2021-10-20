@@ -1,0 +1,45 @@
+// Teacher Details Table
+
+CREATE TABLE [dbo].[Teacher_Detail] (
+    [Id]         INT           IDENTITY (1, 1) NOT NULL,
+    [First_Name] NVARCHAR (50) NOT NULL,
+    [Last_Name]  NVARCHAR (50) NOT NULL,
+    [Email]      NVARCHAR (50) NOT NULL,
+    [Contact]    INT           NOT NULL,
+    [Branch]     NCHAR (10)    NOT NULL,
+    [Password]   NVARCHAR (50) NOT NULL,
+    CONSTRAINT [PK_Teachers] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+// Student Details Table
+
+CREATE TABLE [dbo].[Student_Details] (
+    [Id]         INT           IDENTITY (1, 1) NOT NULL,
+    [First_name] NVARCHAR (50) NOT NULL,
+    [Last_name]  NVARCHAR (50) NOT NULL,
+    [Email]      NVARCHAR (50) NOT NULL,
+    [Mobile_no]  INT           NOT NULL,
+    [Teacher_Id] INT           NOT NULL,
+    [Branch]     NCHAR (10)    NOT NULL,
+    [Password]   NVARCHAR (50) NOT NULL,
+    CONSTRAINT [PK_Students] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Id] FOREIGN KEY ([Teacher_Id]) REFERENCES [dbo].[Teacher_Detail] ([Id])
+);
+
+
+// Student Marks Table
+
+CREATE TABLE [dbo].[Student_Marks] (
+    [Student_Id] INT NOT NULL,
+    [Teacher_Id] INT NOT NULL,
+    [OS]         INT NOT NULL,
+    [AA]         INT NOT NULL,
+    [WDDN]       INT NOT NULL,
+    [MFP]        INT NOT NULL,
+    [AT]         INT NOT NULL,
+    [id]         INT NOT NULL,
+    CONSTRAINT [PK_Student_Marks] PRIMARY KEY CLUSTERED ([id] ASC),
+    CONSTRAINT [FK_Id2] FOREIGN KEY ([Teacher_Id]) REFERENCES [dbo].[Teacher_Detail] ([Id]),
+    CONSTRAINT [FK_Id3] FOREIGN KEY ([Student_Id]) REFERENCES [dbo].[Student_Details] ([Id])
+);
